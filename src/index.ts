@@ -1,16 +1,16 @@
-import * as  Vue from 'vue'
-import HelloComponent from './components/Hello.vue'
 
-let v = new Vue({
-    el: '#root',
-    template: `
+import * as Vue from 'vue'
+import HelloComponent from './components/Hello.vue'
+const view = new Vue({
+  template: `
     <div>
         Name: <input v-model="name" type="text">
-        <hello-component :name="name" :initialEnthusiasm="5" />
+        <hello-component :name="name" :msg="5" />
     </div>
     `,
-    data: { name: 'World' },
-    components: {
-        HelloComponent
-    }
+  data: { name: 'World' },
+  components: {
+    HelloComponent
+  }
 })
+view.$mount('#root')
