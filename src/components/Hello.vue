@@ -27,6 +27,14 @@ export default class App extends Vue {
   increment() {
     this.name += '-1'
   }
+  // hooks
+  //  beforeRouteEnter () {
+  //   console.log('beforeRouteEnter')
+  // }
+
+  // beforeRouteLeave () {
+  //   console.log('beforeRouteLeave')
+  // }
 }
 </script>
 

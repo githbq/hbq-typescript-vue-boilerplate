@@ -1,5 +1,7 @@
 
 import * as Vue from 'vue'
+import './class-component-hooks'
+
 import HelloComponent from './components/Hello.vue'
 const view = new Vue({
   template: `
