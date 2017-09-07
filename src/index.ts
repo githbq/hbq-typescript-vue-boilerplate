@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import * as  Vue from 'vue'
 import HelloComponent from './components/Hello.vue'
 
 let v = new Vue({
