@@ -17,6 +17,7 @@ import Component from 'vue-class-component'
   }
 })
 export default class App extends Vue {
+  msg: string
   name = 'abc' + this.msg
 
   // method
