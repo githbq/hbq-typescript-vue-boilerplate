@@ -107,7 +107,7 @@ if (__DEV__) {
       asset: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
+      threshold: 1024,
       minRatio: 0,
     }),
     new webpack.optimize.UglifyJsPlugin({
