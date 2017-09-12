@@ -15,11 +15,12 @@
     "start:size": "better-npm-run start:size",
     "start": "better-npm-run start",
     "clean": "better-npm-run remove",
-    "open:dist": "lite-server --config \"./dev-config/lite-server-config.js\" ",
+    "open:dist": "lite-server --config ./dev-config/lite-server-config.js ",
+    "build": "better-npm-run build:dev",
     "build:dev": "better-npm-run build:dev",
     "build:prod": "better-npm-run build:prod",
     "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint src/**/*.ts"
   },
   "betterScripts": {
     "start": {
@@ -36,20 +37,20 @@
       "command": "rimraf dist"
     },
     "dev": {
-      "command": "webpack-dev-server --config \"./dev-config/webpack.config.js\" --progress --colors  --hot ",
+      "command": "webpack-dev-server --config ./dev-config/webpack.config.js --progress --colors  --hot ",
       "env": {
         "NODE_ENV": "development",
         "IS_PROXY": true
       }
     },
     "build:dev": {
-      "command": "better-npm-run remove && webpack --config \"./dev-config/webpack.config.js\" --progress --colors --display-error-details",
+      "command": "better-npm-run remove && webpack --config ./dev-config/webpack.config.js --progress --colors --display-error-details",
       "env": {
         "NODE_ENV": "development"
       }
     },
     "build:prod": {
-      "command": "better-npm-run remove && webpack --config \"./dev-config/webpack.config.js\" --progress --colors --display-error-details",
+      "command": "better-npm-run remove && webpack --config ./dev-config/webpack.config.js --progress --colors --display-error-details",
       "env": {
         "NODE_ENV": "production"
       }
@@ -71,6 +72,7 @@
     "eslint": "2.7.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
     "globby": "^6.1.0",
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
@@ -78,6 +80,7 @@
     "lite-server": "^2.3.0",
     "postcss-flexibility": "^1.1.0",
     "postcss-loader": "^1.3.3",
+    "pug": "^2.0.0-rc.4",
     "require-dir": "^0.3.1",
     "rimraf": "^2.6.1",
     "source-map-loader": "^0.2.0",

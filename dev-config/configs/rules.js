@@ -2,7 +2,7 @@
  * 文件处理
  */
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const { TEMPLATE_PATH, PUBLIC_PATH, ROOT_PATH, APP_PATH, BUILD_PATH, NODE_ENV, __DEV__ } = require('./constants')
+const { __DEV__ } = require('./constants')
 const lessLoaderVars = {}
 const postCSSConfig = JSON.stringify(require('./utils').postCSSConfig);
 let rules = [ // 定义各种loader
@@ -23,6 +23,14 @@ let rules = [ // 定义各种loader
       typeCheck: false,
       fix: true,
       appendTsSuffixTo: [/\.vue$/],
+    }
+  },
+  {
+    test: /\.less$/,
+    enforce: 'pre',
+    loader: 'stylefmt-loader',
+    options: {
+      config: '.stylelintrc.json'
     }
   },
   ...require('./rulesOfCss')({

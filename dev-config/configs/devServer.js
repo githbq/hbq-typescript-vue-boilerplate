@@ -10,7 +10,6 @@ module.exports = {
     publicPath: PUBLIC_PATH,
     inline: true,
     // clientLogLevel: 'warning', // none, error, warning or info (default).
-    compress: false, // 开启gzip压缩 for everything served
     // HTML5 History API
     historyApiFallback: true,
     // watchOptions: {
@@ -18,7 +17,7 @@ module.exports = {
     //     ignored: /node_modules/,
     //     poll: 1000, // Check for changes every second
     // },
-    quiet: false, // 让dev server处于静默的状态启动(控制台中不输出打包的信息)
+    quiet: true, // 让dev server处于静默的状态启动(控制台中不输出打包的信息)
     noInfo: false, // set to false to see a list of every file being bundled.
     headers: { 'X-Custom-Header': 'yes' },
     proxy: require('./proxy')
