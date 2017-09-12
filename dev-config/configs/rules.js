@@ -33,7 +33,7 @@ let rules = [ // 定义各种loader
       config: '.stylelintrc.json'
     }
   },
-  ...require('./rulesOfCss')({
+  ...require('./rules.css')({
     __DEV__,
     lessLoaderVars,
     postCSSConfig
@@ -43,7 +43,7 @@ let rules = [ // 定义各种loader
     loader: 'vue-loader',
     options: {
       loaders: {
-        ...require('./rulesOfCss')({
+        ...require('./rules.css')({
           __DEV__,
           lessLoaderVars,
           postCSSConfig
