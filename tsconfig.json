@@ -1,48 +1,48 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "alwaysStrict": true,
-        "sourceMap": true,
-        "noEmit": true,
-        "noEmitHelpers": true,
-        "importHelpers": true,
-        "strictNullChecks": false,
-        "allowUnreachableCode": true,
-        "lib": [
-            "es2017",
-            "dom"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "types": [
-            "vue"
-        ],
-        "outDir": "./build",
-        "rootDir": "./src",
-        "baseUrl": "./",
-        "paths": {
-            "@/*": [
-                "src/*"
-            ],
-            "*": [
-                "*"
-            ]
-        }
-    },
-    "include": [
-        "./**/*.ts"
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "strictNullChecks": false,
+    "allowUnreachableCode": true,
+    "lib": [
+      "es2017",
+      "dom"
     ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "**/*.test.ts",
-        "temp"
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "compileOnSave": false,
-    "buildOnSave": false
+    "types": [
+      "vue"
+    ],
+    "outDir": "./build",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "*": [
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "**/*.test.ts",
+    "temp"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
 }
