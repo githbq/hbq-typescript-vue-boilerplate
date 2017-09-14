@@ -9,7 +9,7 @@ const { TEMPLATE_PATH, PUBLIC_PATH, ROOT_PATH, APP_PATH, BUILD_PATH, NODE_ENV, _
 //  taticOptions?, setup?, stats?, reporter?, noInfo?, quiet?, serverSideRender?, index?, log?
 //  , warn? }
 module.exports = {
-  useLocalIp: true,
+  // useLocalIp: true,
   openPage: 'index.html',
   hot: true,
   open: true,
