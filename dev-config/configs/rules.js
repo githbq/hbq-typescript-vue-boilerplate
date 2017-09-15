@@ -9,14 +9,27 @@ let rules = [ // 定义各种loader
   {
     test: /\.ts$/,
     enforce: 'pre',
-    loader: 'tslint-loader',
-    options: {
-      emitErrors: true,
-      failOnHint: true,
-      typeCheck: false,
-      fix: true,
-      appendTsSuffixTo: [/\.vue$/],
-    }
+    exclude: /(node_modules)/,
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          happyPackMode: true,
+          transpileOnly: true,
+        }
+      },
+      {
+        loader: 'tslint-loader',
+        options: {
+          emitErrors: true,
+          failOnHint: true,
+          typeCheck: false,
+          fix: true,
+          appendTsSuffixTo: [/\.vue$/],
+        }
+      }
+    ]
+
   },
   {
     test: /\.less$/,
@@ -73,35 +86,17 @@ let rules = [ // 定义各种loader
 ]
 
 if (__DEV__) {
-  rules.push({
-    test: /\.ts$/,
-    exclude: /(node_modules)/,
-    use: [{
-      loader: 'ts-loader',
-      options: {
-        jsx: true,
-        happyPackMode: true,
-        transpileOnly: true,
-      }
-    }]
-  })
+
 } else {
   //生产环境
   rules.push({
     test: /\.ts$/,
     exclude: /(node_modules)/,
-    use: [{
-      loader: 'ts-loader',
-      options: {
-        jsx: true,
-        happyPackMode: true,
-        transpileOnly: true,
+    use: [
+      {
+        loader: 'strip-loader',
+        options: { strip: ['logger.info', 'logger.debug', 'console.log', 'console.debug'] }
       }
-    },
-    {
-      loader: 'strip-loader',
-      options: { strip: ['logger.info', 'logger.debug', 'console.log', 'console.debug'] }
-    }
     ]
   })
 }
