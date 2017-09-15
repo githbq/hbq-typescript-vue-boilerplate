@@ -1,7 +1,7 @@
 <!-- src/components/Hello.vue -->
 <template>
   <div>
-    <div class="greeting">Hello {{name}}</div>
+    <div class="greeting">Hello {{name}}</div>77777
     <button @click="decrement">-</button>
     <button @click="increment">+</button>
   </div>
