@@ -1,11 +1,11 @@
 /**
  * 文件处理
  */
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const { __DEV__ } = require('./constants')
-const lessLoaderVars = {}
-const postCSSConfig = JSON.stringify(require('./utils').postCSSConfig);
-let rules = [ // 定义各种loader
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin'
+import { __DEV__ } from './constants'
+import { getCssRules } from './rules.css'
+
+let _rules = [ // 定义各种loader
   {
     test: /\.pug$/,
     loader: 'pug-loader',
@@ -18,13 +18,6 @@ let rules = [ // 定义各种loader
     enforce: 'pre',
     exclude: /(node_modules)/,
     use: [
-      {
-        loader: 'ts-loader',
-        options: {
-          happyPackMode: true,
-          transpileOnly: true,
-        }
-      },
       {
         loader: 'tslint-loader',
         options: {
@@ -46,21 +39,22 @@ let rules = [ // 定义各种loader
       config: '.stylelintrc.json'
     }
   },
-  ...require('./rules.css')({
+  ...getCssRules({
     __DEV__,
-    lessLoaderVars,
-    postCSSConfig
-  }),
+    cssModules: true,
+    extract: !__DEV__
+  }
+  ),
   {
     test: /\.vue$/,
     loader: 'vue-loader',
     options: {
       loaders: {
-        ...require('./rules.css')({
+        ...getCssRules({
           __DEV__,
-          lessLoaderVars,
-          postCSSConfig
-        }),
+          cssModules: true,
+          extract: !__DEV__
+        })
       }
       // other vue-loader options go here
     }
@@ -93,18 +87,44 @@ let rules = [ // 定义各种loader
 ]
 
 if (__DEV__) {
-
+  _rules.push(
+    {
+      test: /\.ts?$/,
+      exclude: /(node_modules)/,
+      use: [{
+        loader: 'ts-loader',
+        options: {
+          jsx: true,
+          happyPackMode: true,
+          transpileOnly: true,
+        }
+      }]
+    }
+  )
 } else {
   //生产环境
-  rules.push({
-    test: /\.ts$/,
+  _rules.push({
+    test: /\.ts?$/,
     exclude: /(node_modules)/,
     use: [
       {
+        loader: 'ts-loader',
+        options: {
+          jsx: true,
+          happyPackMode: true,
+          transpileOnly: true,
+        }
+      },
+      {
         loader: 'strip-loader',
-        options: { strip: ['logger.info', 'logger.debug', 'console.log', 'console.debug'] }
+        options: {
+          strip: ['logger.info', 'logger.debug', 'console.log',
+            'console.debug'
+          ]
+        }
       }
     ]
   })
 }
-module.exports = rules
+
+export const rules = _rules

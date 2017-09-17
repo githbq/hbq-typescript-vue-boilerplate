@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "alwaysStrict": true,
     "sourceMap": true,
-    "noEmit": true,
+    "noEmit": false,
     "noEmitHelpers": true,
     "importHelpers": true,
     "strictNullChecks": false,
@@ -20,10 +20,11 @@
       "node_modules/@types"
     ],
     "types": [
-      "vue"
+      "node",
+      "webpack"
     ],
     "outDir": "./build",
-    "rootDir": "./src",
+    "rootDir": "./",
     "baseUrl": "./",
     "paths": {
       "@/*": [
@@ -34,12 +35,10 @@
       ]
     }
   },
-  "include": [
-    "./**/*.ts"
-  ],
   "exclude": [
     "node_modules",
     "build",
+    "dist",
     "**/*.test.ts",
     "temp"
   ],
