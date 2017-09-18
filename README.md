@@ -66,12 +66,4 @@ iclone init -t ts-vue -n [projectName]
   - 比如: `./src/apps/xx.ts` 对应  `./src/apps/xx.html`
   - 如果文件名以 `_`开头则忽略掉对应的文件
 5. add css modules
-
-  ```
-  //不加入css modules
-  :global {
-  }
-  //css modules 用法
-  import * as styles from './style.less'
-  `<div className={styles['demo-route']}>`
-  ```
+ 
