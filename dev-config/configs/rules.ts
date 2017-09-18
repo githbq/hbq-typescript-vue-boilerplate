@@ -91,14 +91,21 @@ if (__DEV__) {
     {
       test: /\.ts?$/,
       exclude: /(node_modules)/,
-      use: [{
-        loader: 'ts-loader',
-        options: {
-          jsx: true,
-          happyPackMode: true,
-          transpileOnly: true,
+      use: [
+        {
+          loader: 'ts-loader',
+          options: {
+            jsx: true,
+            happyPackMode: true,
+            transpileOnly: true,
+          }
         }
-      }]
+        // {
+        //   loader: 'awesome-typescript-loader',
+        //   options: {
+        //   }
+        // }
+      ]
     }
   )
 } else {
@@ -115,6 +122,11 @@ if (__DEV__) {
           transpileOnly: true,
         }
       },
+      // {
+      //   loader: 'awesome-typescript-loader',
+      //   options: {
+      //   }
+      // },
       {
         loader: 'strip-loader',
         options: {
