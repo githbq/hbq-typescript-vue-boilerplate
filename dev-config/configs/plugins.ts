@@ -18,6 +18,21 @@ import { getHtmlPlugins } from './plugins.html'
 // _plugins
 let _plugins = [
   ...getHtmlPlugins(__DEV__),
+  // new ExtractTextPlugin('css/[name].[contenthash:8].css'),
+  new ExtractTextPlugin('css/[name].css'),
+  // split vendor js into its own file
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'common',
+    filename: 'common.js',
+    minChunks: function (module, count) {
+      // any required modules inside node_modules are extracted to vendor
+      return (
+        // module.resource &&
+        // /\.js$/.test(module.resource) &&
+        /node_modules/.test(module.resource)
+      )
+    }
+  }),
   new FriendlyErrorsWebpackPlugin(),
   process.env.analysis ? new BundleAnalyzerPlugin() : () => { },
   new webpack.DefinePlugin({
@@ -57,21 +72,6 @@ if (__DEV__) {
 } else {
   _plugins = [
     ..._plugins,
-    // new ExtractTextPlugin('css/[name].[contenthash:8].css'),
-    new ExtractTextPlugin('css/[name].css'),
-    // split vendor js into its own file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common.js',
-      minChunks: function (module, count) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          // module.resource &&
-          // /\.js$/.test(module.resource) &&
-          /node_modules/.test(module.resource)
-        )
-      }
-    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     // new WebpackMd5Hash(),
     new webpack.HashedModuleIdsPlugin(), //这个比 webpack.NamedModulesPlugin 更有用
