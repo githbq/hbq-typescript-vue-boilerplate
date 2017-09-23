@@ -1,7 +1,7 @@
 <!-- src/components/Hello.vue -->
 <template>
-  <div>
-    <div class="greeting">Hello {{name}}</div>77777
+  <div class="abc">
+    <div class="greeting">Hello {{name}}</div>7777799
     <button @click="decrement">-</button>
     <button @click="increment">+</button>
   </div>
@@ -38,8 +38,12 @@ export default class App extends Vue {
 }
 </script>
 
-<style>
-.greeting {
+<style lang="less" scoped>
+.abc {
+  border: 5px solid yellow;
   font-size: 20px;
+  div {
+    border: 5px solid red;
+  }
 }
 </style>

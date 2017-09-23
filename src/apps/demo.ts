@@ -6,7 +6,7 @@ const view = new Vue({
   template: `
     <div>
         Name: <input v-model="name" type="text">
-        <hello-component :name="name" :msg="5" />
+        <hello-component :name="name" :msg="'5'" />
     </div>
     `,
   data: { name: 'World' },
