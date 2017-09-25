@@ -10,7 +10,7 @@ import { proxy } from './proxy'
 //  taticOptions?, setup?, stats?, reporter?, noInfo?, quiet?, serverSideRender?, index?, log?
 //  , warn? }
 export const devServer = {
-  // useLocalIp: true,
+  useLocalIp: true,
   openPage: 'index.html',
   overlay: true,
   host: '0.0.0.0',
