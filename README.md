@@ -66,4 +66,4 @@ iclone init -t ts-vue -n [projectName]
   - 比如: `./src/apps/xx.ts` 对应  `./src/apps/xx.html`
   - 如果文件名以 `_`开头则忽略掉对应的文件
 5. add css modules
- 
+6. `webpack-dev-server` 添加 `host: '0.0.0.0'` 配置局域网内可访问
