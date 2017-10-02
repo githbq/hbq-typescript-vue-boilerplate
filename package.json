@@ -23,10 +23,10 @@
   },
   "betterScripts": {
     "start": {
-      "command": "npm run clean && better-npm-run dev"
+      "command": "better-npm-run dev"
     },
     "start:size": {
-      "command": "npm run clean && better-npm-run dev",
+      "command": "better-npm-run dev",
       "env": {
         "NODE_ENV": "production",
         "analysis": "1",
@@ -41,7 +41,7 @@
       }
     },
     "build": {
-      "command": "npm run clean && webpack --config ./dev-config/webpack.config.ts --progress --display-error-details"
+      "command": "webpack --config ./dev-config/webpack.config.ts --progress --display-error-details"
     },
     "build:dev": {
       "command": "better-npm-run build",
