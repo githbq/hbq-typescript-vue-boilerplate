@@ -13,7 +13,7 @@ import * as  ProgressPlugin from 'progress-webpack-plugin'
 import * as  BitBarWebpackProgressPlugin from 'bitbar-webpack-progress-plugin'
 //webpack-md5-hash不需要再使用了 https://sebastianblade.com/using-webpack-to-achieve-long-term-cache/
 // const WebpackMd5Hash = require('webpack-md5-hash')
-import { postCSSConfig } from './utils'
+
 import { NODE_ENV, __DEV__ } from './constants'
 import { devServer } from './devServer'
 import { getHtmlPlugins } from './plugins.html'
@@ -63,7 +63,6 @@ if (__DEV__) {
     new webpack.LoaderOptionsPlugin({
       options: {
         context: '/',
-        postcss: () => postCSSConfig,
         stylus: {
           default: {
             use: [
@@ -112,7 +111,6 @@ if (__DEV__) {
     new webpack.LoaderOptionsPlugin({
       options: {
         context: '/',
-        postcss: () => postCSSConfig,
         stylus: {
           default: {
             use: [
