@@ -2,7 +2,7 @@
   - support  mutilple entry mode
 ## Install
 ```
-git clone --depth=1  https://github.com/githbq/hbq-typescript-vue-boilerplate.git
+git clone https://github.com/githbq/hbq-typescript-vue-boilerplate.git
 // or use iclone-cli
 // first install `iclone-cli` in global
 npm i -g iclone-cli
