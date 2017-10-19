@@ -10,7 +10,7 @@ npm i -g iclone-cli
 iclone init -t ts-vue -n [projectName]
 ```
 
-## startup
+## Startup
 
 ### run in dev mode
 
@@ -20,7 +20,7 @@ iclone init -t ts-vue -n [projectName]
 
 > npm run build:prod
 
-### catalog
+### Catalog
 
 ```
 ├── README.md
