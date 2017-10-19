@@ -96,8 +96,8 @@ if (__DEV__) {
           loader: 'ts-loader',
           options: {
             jsx: true,
-            happyPackMode: true,
-            transpileOnly: true,
+            // happyPackMode: true,
+            // transpileOnly: true,
           }
         }
         // {
@@ -118,8 +118,8 @@ if (__DEV__) {
         loader: 'ts-loader',
         options: {
           jsx: true,
-          happyPackMode: true,
-          transpileOnly: true,
+          // happyPackMode: true,
+          // transpileOnly: true,
         }
       },
       // {
