@@ -97,7 +97,7 @@ if (__DEV__) {
           options: {
             jsx: true,
             // happyPackMode: true,
-            // transpileOnly: true,
+            transpileOnly: true,
           }
         }
         // {
@@ -119,7 +119,7 @@ if (__DEV__) {
         options: {
           jsx: true,
           // happyPackMode: true,
-          // transpileOnly: true,
+          transpileOnly: true,
         }
       },
       // {
