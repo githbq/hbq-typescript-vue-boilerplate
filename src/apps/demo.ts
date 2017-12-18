@@ -4,7 +4,7 @@ import { createStore } from '@/store'
 import HelloComponent from '@/components/Hello.vue'
 new Vue({
   el: '#root',
-  store: createStore(),
+  // store: createStore(),
   template: `
     <div>
         Name: <input v-model="name" type="text">
