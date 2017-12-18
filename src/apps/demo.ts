@@ -1,8 +1,10 @@
 
 import * as Vue from 'vue'
-
+import { createStore } from '@/store'
 import HelloComponent from '@/components/Hello.vue'
-const view = new Vue({
+new Vue({
+  el: '#root',
+  store: createStore(),
   template: `
     <div>
         Name: <input v-model="name" type="text">
@@ -14,4 +16,3 @@ const view = new Vue({
     HelloComponent
   }
 })
-view.$mount('#root')

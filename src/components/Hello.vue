@@ -1,7 +1,10 @@
 <!-- src/components/Hello.vue -->
 <template>
   <div class="abc">
-    <div class="greeting">Hello {{name}}</div>7777799
+    <div class="greeting">Hello {{newName}}</div>7777799
+    <br/>
+    _newName:{{_newName}}
+    <br/>
     <button @click="decrement">-</button>
     <button @click="increment">+</button>
   </div>
@@ -12,20 +15,24 @@ import * as Vue from 'vue'
 import Component from 'vue-class-component'
 @Component({
   props: {
-    name: String,
+    // name: String,
     msg: String
   }
 })
 export default class App extends Vue {
-  msg: string
-  name = 'abc' + this.msg
-
+  newName: string = ''
+  created() {
+    this.newName = 'abc' + this.$props.msg
+  }
+  get _newName() {
+    return this.newName
+  }
   // method
   decrement() {
-    this.name += '+1'
+    this.newName += '+1'
   }
   increment() {
-    this.name += '-1'
+    this.newName += '-1'
   }
   // hooks
   //  beforeRouteEnter () {
