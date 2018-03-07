@@ -70,6 +70,7 @@ export const getCssRules = ({ __DEV__, cssModules = true, extract = true }) => {
         test: reg,
         use: _ExtractTextPlugin.extract({
           fallback: styleLoader,
+          publicPath: extract ? '../' : '',
           use: [
             ...(extract ? [] : [styleLoader]),
             cssLoader,
