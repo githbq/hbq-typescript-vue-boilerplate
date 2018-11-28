@@ -52,12 +52,12 @@ export const entry = {
   regTemplate,
   //只包含入口ts
   apps: {
-    index: './src/index',
+    pages: './src/pages',
     ...entryObject
   },
   //包含入口ts  以及 template
   all: {
-    index: './src/index',
+    pages: './src/pages',
     ...entryObject,
     ...templateObject
   }
