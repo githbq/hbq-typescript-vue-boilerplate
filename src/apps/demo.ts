@@ -1,7 +1,10 @@
 
+/* tslint:disable */
+
 import * as Vue from 'vue'
 import { createStore } from '@/store'
 import HelloComponent from '@/components/Hello.vue'
+
 export const app = new Vue({
   el: '#root',
   // store: createStore(),
